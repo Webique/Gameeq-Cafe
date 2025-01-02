@@ -18,3 +18,24 @@ document.addEventListener('click', () => {
         navLinks.style.maxHeight = '0';
     }
 });
+
+function togglePanel() {
+    const panel = document.getElementById("bookPanel");
+    panel.classList.toggle("open"); // Toggles the 'open' class
+}
+function togglePanel() {
+    const panel = document.getElementById("bookPanel");
+    const overlay = document.getElementById("panelOverlay");
+
+    // Toggle panel and overlay visibility
+    const isOpen = panel.classList.toggle("open");
+    overlay.style.display = isOpen ? "block" : "none";
+}
+
+function closePanel() {
+    const panel = document.getElementById("bookPanel");
+    const overlay = document.getElementById("panelOverlay");
+
+    panel.classList.remove("open"); // Close the panel
+    overlay.style.display = "none"; // Hide the overlay
+}
