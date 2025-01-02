@@ -755,7 +755,6 @@ html {
     background-color: rgba(228, 216, 202, 1); /* Match theme */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    transition: right 0.3s ease-in-out;
     z-index: 1000;
 }
 
@@ -784,7 +783,6 @@ html {
     color: rgba(248, 240, 228, 1);
     font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .close-panel:hover {
@@ -811,7 +809,7 @@ html {
 .open-panel {
     position: fixed;
     top: 50%;
-    right: 0;
+    right: 0; /* Initial position when the panel is closed */
     transform: translateY(-50%);
     background-color: rgba(172, 102, 72, 1);
     color: rgba(248, 240, 228, 1);
@@ -820,52 +818,11 @@ html {
     padding: 10px 15px;
     cursor: pointer;
     z-index: 1000;
-    transition: background 0.3s, transform 0.2s;
 }
 
 .open-panel:hover {
     background-color: rgba(122, 72, 42, 1);
     transform: translateY(-50%) scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .side-panel {
-        width: 250px; /* Narrower panel for tablets */
-    }
-
-    .panel-header h2 {
-        font-size: 1.3rem;
-    }
-
-    .book-list li {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .side-panel {
-        width: 200px; /* Even narrower for phones */
-    }
-
-    .panel-header h2 {
-        font-size: 1.1rem;
-    }
-
-    .book-list li {
-        font-size: 0.8rem;
-    }
-}
-/* Background Overlay */
-.panel-overlay {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 999; /* Below the panel but above other elements */
 }
 
 /* Side Panel Styling */
@@ -878,7 +835,57 @@ html {
     background-color: rgba(228, 216, 202, 1); /* Match theme */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Above the overlay */
+}
+
+.side-panel.open {
+    right: 0; /* Immediately visible without smooth effect */
+}
+
+/* Background Overlay */
+.panel-overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Below the panel but above other elements */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-panel {
+        width: 250px; /* Narrower panel for tablets */
+    }
+
+    .open-panel {
+        right: 250px; /* Adjust button position when panel is open on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .side-panel {
+        width: 200px; /* Even narrower for phones */
+    }
+
+    .open-panel {
+        right: 200px; /* Adjust button position when panel is open on phones */
+    }
+}
+
+
+/* Side Panel Styling */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background-color: rgba(228, 216, 202, 1); /* Match theme */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
     z-index: 1000; /* Above the overlay */
 }
 
@@ -907,7 +914,6 @@ html {
     color: rgba(248, 240, 228, 1);
     font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .close-panel:hover {

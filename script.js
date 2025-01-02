@@ -19,23 +19,33 @@ document.addEventListener('click', () => {
     }
 });
 
-function togglePanel() {
-    const panel = document.getElementById("bookPanel");
-    panel.classList.toggle("open"); // Toggles the 'open' class
-}
+
 function togglePanel() {
     const panel = document.getElementById("bookPanel");
     const overlay = document.getElementById("panelOverlay");
+    const toggleButton = document.querySelector(".open-panel");
 
-    // Toggle panel and overlay visibility
+    // Toggle panel visibility
     const isOpen = panel.classList.toggle("open");
     overlay.style.display = isOpen ? "block" : "none";
+
+    // Move the toggle button with the panel
+    const panelWidth = panel.offsetWidth; // Get the panel width dynamically
+    toggleButton.style.right = isOpen ? `${panelWidth}px` : "0";
 }
 
 function closePanel() {
     const panel = document.getElementById("bookPanel");
     const overlay = document.getElementById("panelOverlay");
+    const toggleButton = document.querySelector(".open-panel");
 
-    panel.classList.remove("open"); // Close the panel
-    overlay.style.display = "none"; // Hide the overlay
+    // Close the panel and reset button position
+    panel.classList.remove("open");
+    overlay.style.display = "none";
+    toggleButton.style.right = "0";
 }
+
+// Close the panel when clicking outside
+document.getElementById("panelOverlay").addEventListener("click", closePanel);
+
+
