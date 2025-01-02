@@ -1,0 +1,747 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Futura PT Medium', sans-serif;
+    background-color: rgba(228, 216, 202, 1);
+    color: rgba(172, 102, 72, 1);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(228, 216, 202, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container .logo {
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    .logo-container .logo {
+        height: 60px;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-padding-top: 80px; /* Adjust this value to match your header's height */
+}
+
+
+
+.nav-links a {
+    text-decoration: none;
+    font-family: 'Futura PT Medium', sans-serif;
+    font-weight: bold;
+    color: rgba(172, 102, 72, 1);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgba(200, 146, 92, 1);
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: rgba(172, 102, 72, 1);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: block;
+        flex-direction: column;
+        background-color: rgba(228, 216, 202, 1);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        margin-left: 15px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 90vh; /* Increased height for prominence */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero .slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero .slideshow video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .slideshow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: 'DG Mataryah', sans-serif; /* Apply DG Mataryah font */
+    color: rgba(248, 240, 228, 1); /* Light theme tone matching background */
+}
+
+/* Title Styling */
+.hero-title {
+    font-size: 6rem; /* Large for emphasis */
+    margin: 0;
+    color: rgba(248, 240, 228, 1); /* Light, theme-coordinated color */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for visibility */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: softGlow 4s infinite alternate;
+}
+
+/* Banner Styling */
+.hero-banner {
+    font-size: 2.5rem; /* Larger for prominence */
+    margin-top: 20px;
+    color: rgba(228, 216, 202, 1); /* Slightly warmer light tone */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for contrast */
+    letter-spacing: 2px;
+    font-style: italic;
+    animation: softFade 3s infinite alternate;
+}
+
+/* Soft Glow Animation */
+@keyframes softGlow {
+    from {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4),
+                     0 0 10px rgba(248, 240, 228, 0.6);
+    }
+    to {
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6),
+                     0 0 20px rgba(248, 240, 228, 0.8);
+    }
+}
+
+/* Soft Fade Animation */
+@keyframes softFade {
+    from {
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3),
+                     0 0 5px rgba(228, 216, 202, 0.5);
+    }
+    to {
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5),
+                     0 0 10px rgba(228, 216, 202, 0.7);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+    }
+
+    .hero-banner {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-banner {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Hero Button Styling */
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 20px 60px;
+    font-size: 2rem;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(248, 240, 228, 1); /* Light text color matching the theme */
+    background: rgba(255, 255, 255, 0.2); /* Transparent frosted glass effect */
+    border: 2px solid rgba(248, 240, 228, 0.4); /* Subtle border */
+    border-radius: 25px; /* Rounded rectangular shape */
+    text-decoration: none;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glass effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add depth */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Clip effects */
+}
+
+/* Button Hover Effects */
+.hero-button:hover {
+    background: rgba(248, 240, 228, 0.5); /* More opaque background */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    color: rgba(172, 102, 72, 1); /* Theme-colored text on hover */
+}
+
+/* Button Active State */
+.hero-button:active {
+    transform: scale(1); /* Reset scale */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+/* Additional Button Styling */
+.hero-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(248, 240, 228, 0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: 0;
+    opacity: 0;
+}
+
+.hero-button:hover::before {
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    opacity: 1; /* Show radial glow effect */
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+    .hero-button {
+        font-size: 1.6rem;
+        padding: 15px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-button {
+        font-size: 1.4rem;
+        padding: 12px 40px;
+    }
+}
+
+/* About Us Section Styling */
+#about-us {
+    background: rgba(228, 216, 202, 1);
+    padding: 60px 40px; /* Unified padding across all sides */
+    color: rgba(122, 72, 42, 1); /* Text color matching the theme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.about-container {
+    max-width: 1200px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    align-items: center;
+    margin: 0 auto; /* Center container horizontally */
+}
+
+/* Text Section */
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 auto; /* Center text content */
+}
+
+.about-heading {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(172, 102, 72, 1); /* Theme color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: left; /* Default for desktop */
+}
+
+.about-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-family: 'Futura PT Medium', sans-serif;
+    color: rgba(122, 72, 42, 1); /* Slightly darker tone */
+}
+
+/* Image Section */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about-us {
+        padding: 40px 20px; /* Adjust padding for tablets */
+    }
+
+    .about-heading {
+        font-size: 2.8rem;
+        text-align: center; /* Center-align for responsiveness */
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack columns */
+        gap: 30px; /* Slightly increase gap for spacing */
+    }
+
+    .about-text, .about-image {
+        min-width: 100%; /* Ensure full width on smaller devices */
+    }
+
+    .about-image img {
+        width: 90%; /* Reduce image width for smaller screens */
+        max-width: 300px; /* Limit maximum size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    #about-us {
+        padding: 30px 15px; /* Smaller padding for phones */
+    }
+
+    .about-heading {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        gap: 20px; /* Reduce spacing for smaller screens */
+    }
+
+    .about-image img {
+        width: 100%; /* Full width for very small screens */
+        max-width: 250px; /* Limit max size */
+        height: auto;
+    }
+}
+
+
+/* Opening Hours Section Styling */
+#opening-hours {
+    background: rgba(228, 216, 202, 1); /* Subtle gradient background */
+    padding: 60px 40px; /* Consistent padding across all sides */
+    text-align: center;
+    color: rgba(172, 102, 72, 1); /* Theme text color */
+}
+
+.hours-container {
+    max-width: 800px;
+    margin: 0 auto; /* Center container */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hours-heading {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(172, 102, 72, 1); /* Theme color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+}
+
+.hours-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Adjusted gap for balanced spacing */
+}
+
+.clock-icon img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)); /* Add shadow to icon */
+    border-radius: 50%; /* Rounded image for a sleek look */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.clock-icon img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.4)); /* Enhanced shadow on hover */
+}
+
+.hours-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Futura PT Medium', sans-serif; /* Complementary font */
+    margin-bottom: 5px;
+    color: rgba(122, 72, 42, 1); /* Slightly darker tone */
+}
+
+.hours-time {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(172, 102, 72, 1); /* Theme color */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #opening-hours {
+        padding: 40px 20px; /* Adjust padding for tablets */
+    }
+
+    .hours-heading {
+        font-size: 2.8rem; /* Adjust heading size for tablets */
+        text-align: center;
+    }
+
+    .hours-text {
+        font-size: 1.3rem; /* Adjust text size for tablets */
+    }
+
+    .hours-time {
+        font-size: 1.8rem; /* Adjust time size for tablets */
+    }
+
+    .clock-icon img {
+        width: 200px;
+        height: 200px; /* Smaller icon size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #opening-hours {
+        padding: 30px 15px; /* Adjust padding for phones */
+    }
+
+    .hours-heading {
+        font-size: 2.2rem; /* Adjust heading size for phones */
+        text-align: center;
+    }
+
+    .hours-text {
+        font-size: 1.2rem; /* Adjust text size for phones */
+    }
+
+    .hours-time {
+        font-size: 1.6rem; /* Adjust time size for phones */
+    }
+
+    .clock-icon img {
+        width: 150px;
+        height: 150px; /* Smaller icon size for phones */
+    }
+}
+
+
+
+/* Section Divider Styling */
+.section-divider {
+    width: 80%; /* Width of the divider */
+    height: 2px; /* Thickness of the divider */
+    margin: 40px auto; /* Center the divider with spacing above and below */
+    background: linear-gradient(90deg, rgba(172, 102, 72, 1), rgba(228, 216, 202, 1), rgba(172, 102, 72, 1)); /* Gradient color for style */
+    border-radius: 5px; /* Rounded edges for a softer look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.section-divider:hover {
+    transform: scaleX(1.1); /* Slight horizontal expansion */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-divider {
+        width: 90%; /* Adjust width for tablets */
+        height: 1.5px; /* Slightly thinner divider for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-divider {
+        width: 95%; /* Adjust width for phones */
+        height: 1px; /* Thinner divider for small screens */
+    }
+}
+
+/* Location Section Styling */
+#location {
+    background: rgba(228, 216, 202, 1); /* Match the theme background */
+    padding: 60px 40px; /* Maintain consistent padding */
+    text-align: center;
+    color: rgba(172, 102, 72, 1); /* Theme text color */
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.location-heading {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(172, 102, 72, 1); /* Theme color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded edges for a sleek look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth */
+}
+
+.map-container iframe {
+    border: none; /* Remove iframe border */
+    border-radius: 10px; /* Inherit the container's rounded edges */
+    width: 100%;
+    height: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #location {
+        padding: 40px 20px; /* Adjust padding for tablets */
+    }
+
+    .location-heading {
+        font-size: 2.5rem; /* Adjust heading size for tablets */
+    }
+
+    .map-container iframe {
+        height: 300px; /* Adjust map height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #location {
+        padding: 30px 15px; /* Adjust padding for phones */
+    }
+
+    .location-heading {
+        font-size: 2rem; /* Adjust heading size for phones */
+    }
+
+    .map-container iframe {
+        height: 250px; /* Adjust map height for phones */
+    }
+
+}
+
+/* Footer Section Styling */
+#footer {
+    background: rgba(228, 216, 202, 1); /* Light background */
+    color: rgba(122, 72, 42, 1); /* Theme text color */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Contact Section */
+.footer-contact, .footer-social, .footer-credits {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.footer-contact h3, .footer-social h3 {
+    font-size: 1.8rem;
+    font-family: 'DG Mataryah', sans-serif;
+    margin-bottom: 10px;
+}
+
+.footer-contact p, .footer-credits p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.footer-contact a, .footer-credits a {
+    color: rgba(122, 72, 42, 1); /* Match text color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover, .footer-credits a:hover {
+    color: rgba(172, 102, 72, 1); /* Slightly darker on hover */
+}
+
+/* Social Section */
+.footer-social .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    color: rgba(122, 72, 42, 1); /* Theme color */
+    border: 2px solid rgba(122, 72, 42, 1); /* Border matches text color */
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    background: rgba(122, 72, 42, 1); /* Darker background on hover */
+    color: rgba(228, 216, 202, 1); /* Light text color on hover */
+}
+
+/* Credits Section */
+.footer-credits {
+    font-size: 1rem;
+    font-family: 'Futura PT Medium', sans-serif;
+    margin-top: 20px;
+    color: rgba(122, 72, 42, 0.8); /* Slightly transparent text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center;
+    }
+
+    .footer-contact, .footer-social, .footer-credits {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #footer {
+        padding: 30px 15px;
+    }
+
+    .footer-contact h3, .footer-social h3 {
+        font-size: 1.6rem; /* Reduce heading size */
+    }
+
+    .footer-contact p, .footer-credits p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .social-icon {
+        font-size: 1.8rem;
+        padding: 6px;
+    }
+}
+
+
