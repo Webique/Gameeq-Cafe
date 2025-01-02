@@ -32,7 +32,7 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 35px;
     margin: 0;
     padding: 0;
 }
@@ -125,7 +125,10 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: relative;
+    top: -60px; /* Adjust this value as needed */
 }
+
 
 .hero .slideshow::before {
     content: "";
@@ -148,6 +151,7 @@ html {
 
 /* Title Styling */
 .hero-title {
+    font-family: 'Amiri', serif; /* Replace with your desired font */
     font-size: 6rem; /* Large for emphasis */
     margin: 0;
     color: rgba(248, 240, 228, 1); /* Light, theme-coordinated color */
@@ -159,6 +163,7 @@ html {
 
 /* Banner Styling */
 .hero-banner {
+    font-family: 'Amiri', serif; /* Replace with your desired font */
     font-size: 2.5rem; /* Larger for prominence */
     margin-top: 20px;
     color: rgba(228, 216, 202, 1); /* Slightly warmer light tone */
@@ -167,6 +172,9 @@ html {
     font-style: italic;
     animation: softFade 3s infinite alternate;
 }
+
+
+
 
 /* Soft Glow Animation */
 @keyframes softGlow {
@@ -347,7 +355,7 @@ html {
 
 .about-image img {
     width: 100%;
-    max-width: 250px;
+    max-width: 225px;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -560,6 +568,96 @@ html {
     }
 }
 
+
+
+#short-books {
+    background: rgba(228, 216, 202, 1); /* Match theme */
+    padding: 60px 40px; /* Consistent padding */
+    text-align: center;
+    color: rgba(172, 102, 72, 1); /* Theme text color */
+}
+
+.books-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.books-heading {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    color: rgba(172, 102, 72, 1); /* Theme color */
+}
+
+.books-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.book-image {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image scales while maintaining its aspect ratio */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.book-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.book-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: rgba(122, 72, 42, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .books-grid {
+        gap: 15px;
+    }
+
+    .book {
+        flex: 1 1 200px;
+    }
+
+    .book-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .books-grid {
+        gap: 10px;
+    }
+
+    .book {
+        flex: 1 1 150px;
+    }
+
+    .book-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
 /* Location Section Styling */
 #location {
     background: rgba(228, 216, 202, 1); /* Match the theme background */
@@ -744,252 +842,3 @@ html {
     }
 }
 
-
-/* Side Panel Styling */
-.side-panel {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Initially hidden */
-    width: 300px;
-    height: 100%;
-    background-color: rgba(228, 216, 202, 1); /* Match theme */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1000;
-}
-
-.side-panel.open {
-    right: 0; /* Slide in when open */
-}
-
-.panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: rgba(172, 102, 72, 1); /* Header background */
-    color: rgba(248, 240, 228, 1); /* Header text color */
-}
-
-.panel-header h2 {
-    margin: 0;
-    font-family: 'DG Mataryah', sans-serif;
-    font-size: 1.5rem;
-}
-
-.close-panel {
-    background: none;
-    border: none;
-    color: rgba(248, 240, 228, 1);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.close-panel:hover {
-    transform: scale(1.2);
-}
-
-.panel-content {
-    padding: 20px;
-    font-family: 'Futura PT Medium', sans-serif;
-}
-
-.book-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.book-list li {
-    margin-bottom: 10px;
-    color: rgba(122, 72, 42, 1);
-}
-
-/* Trigger Button */
-.open-panel {
-    position: fixed;
-    top: 50%;
-    right: 0; /* Initial position when the panel is closed */
-    transform: translateY(-50%);
-    background-color: rgba(172, 102, 72, 1);
-    color: rgba(248, 240, 228, 1);
-    border: none;
-    border-radius: 5px 0 0 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.open-panel:hover {
-    background-color: rgba(122, 72, 42, 1);
-    transform: translateY(-50%) scale(1.1);
-}
-
-/* Side Panel Styling */
-.side-panel {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Initially hidden */
-    width: 300px;
-    height: 100%;
-    background-color: rgba(228, 216, 202, 1); /* Match theme */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1000; /* Above the overlay */
-}
-
-.side-panel.open {
-    right: 0; /* Immediately visible without smooth effect */
-}
-
-/* Background Overlay */
-.panel-overlay {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 999; /* Below the panel but above other elements */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .side-panel {
-        width: 250px; /* Narrower panel for tablets */
-    }
-
-    .open-panel {
-        right: 250px; /* Adjust button position when panel is open on tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .side-panel {
-        width: 200px; /* Even narrower for phones */
-    }
-
-    .open-panel {
-        right: 200px; /* Adjust button position when panel is open on phones */
-    }
-}
-
-
-/* Side Panel Styling */
-.side-panel {
-    position: fixed;
-    top: 0;
-    right: -300px; /* Initially hidden */
-    width: 300px;
-    height: 100%;
-    background-color: rgba(228, 216, 202, 1); /* Match theme */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
-    z-index: 1000; /* Above the overlay */
-}
-
-.side-panel.open {
-    right: 0; /* Slide in when open */
-}
-
-.panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: rgba(172, 102, 72, 1); /* Header background */
-    color: rgba(248, 240, 228, 1); /* Header text color */
-}
-
-.panel-header h2 {
-    margin: 0;
-    font-family: 'DG Mataryah', sans-serif;
-    font-size: 1.5rem;
-}
-
-.close-panel {
-    background: none;
-    border: none;
-    color: rgba(248, 240, 228, 1);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.close-panel:hover {
-    transform: scale(1.2);
-}
-
-.panel-content {
-    padding: 20px;
-    font-family: 'Futura PT Medium', sans-serif;
-}
-
-.book-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.book-list li {
-    margin-bottom: 10px;
-    color: rgba(122, 72, 42, 1);
-}
-
-/* Trigger Button */
-.open-panel {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: rgba(172, 102, 72, 1);
-    color: rgba(248, 240, 228, 1);
-    border: none;
-    border-radius: 5px 0 0 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.open-panel:hover {
-    background-color: rgba(122, 72, 42, 1);
-    transform: translateY(-50%) scale(1.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .side-panel {
-        width: 250px; /* Narrower panel for tablets */
-    }
-
-    .panel-header h2 {
-        font-size: 1.3rem;
-    }
-
-    .book-list li {
-        font-size: 0.9rem;
-    }
-
-    .open-panel {
-        padding: 8px 12px; /* Smaller button for tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .side-panel {
-        width: 200px; /* Even narrower for phones */
-    }
-
-    .panel-header h2 {
-        font-size: 1.1rem;
-    }
-
-    .book-list li {
-        font-size: 0.8rem;
-    }
-
-    .open-panel {
-        padding: 6px 10px; /* Compact button for phones */
-    }
-}
