@@ -213,6 +213,39 @@ body {
         transform: translate(-50%, -50%) scale(1.2); /* Increase zoom for tablets */
     }
 }
+/* Mobile - Adjust text spacing */
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 10px; /* Reduce gap between title and next element */
+    }
+
+    .hero-banner {
+        font-size: 1.8rem;
+        margin-top: 5px;  /* Further reduce gap here */
+        margin-bottom: 0px; /* Adjust if needed */
+    }
+
+    .hero .slideshow video {
+        transform: translate(-50%, -50%) scale(1); /* No zoom for mobile */
+    }
+
+    .hero-content {
+        margin-top: 4rem;  /* Keep text lowered */
+    }
+
+    /* Add button spacing if necessary */
+    .hero-button {
+        margin-top: 10px; /* Control gap between banner and button */
+    }
+}
+
+
+
 
 /* Mobile - No zoom */
 @media (max-width: 480px) {
