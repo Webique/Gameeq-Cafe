@@ -20,7 +20,7 @@ body {
 
 /* Header Styling */
 .main-header {
-    font-family: 'Baloo Bhaina 2', cursive;
+    font-family: 'Playfair Display', serif;
     background-color: var(--background-color);
     position: fixed;
     top: 0;
@@ -72,7 +72,7 @@ body {
 }
 
 .nav-links a {
-    font-family: 'Baloo Bhaina 2', cursive;
+    font-family: 'Playfair Display', serif;
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -287,7 +287,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'DG Mataryah', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: rgba(248, 240, 228, 1);
     width: 100%;
     max-width: 1000px;
@@ -296,11 +296,11 @@ body {
 
 /* Title Styling */
 .hero-title {
-    font-family: 'Amiri', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 6rem;
     margin: 0;
-    color: rgba(248, 240, 228, 1);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    color: rgba(187, 108, 73, 1);
+    text-shadow: 2px 2px 8px rgba(210, 140, 100, 0.6);
     letter-spacing: 3px;
     text-transform: uppercase;
     animation: softGlow 4s infinite alternate;
@@ -308,11 +308,11 @@ body {
 
 /* Banner Styling */
 .hero-banner {
-    font-family: 'Amiri', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     margin-top: 20px;
-    color: rgba(228, 216, 202, 1);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    color: rgba(187, 108, 73, 1);
+    text-shadow: 1px 1px 5px rgba(210, 140, 100, 0.5);
     letter-spacing: 2px;
     font-style: italic;
     animation: softFade 3s infinite alternate;
@@ -322,11 +322,11 @@ body {
 @keyframes softGlow {
     from {
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4),
-                     0 0 10px rgba(248, 240, 228, 0.6);
+                     0 0 10px rgba(210, 140, 100, 0.6);
     }
     to {
         text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6),
-                     0 0 20px rgba(248, 240, 228, 0.8);
+                     0 0 20px rgba(210, 140, 100, 0.8);
     }
 }
 
@@ -334,13 +334,14 @@ body {
 @keyframes softFade {
     from {
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3),
-                     0 0 5px rgba(228, 216, 202, 0.5);
+                     0 0 5px rgba(210, 140, 100, 0.5);
     }
     to {
         text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5),
-                     0 0 10px rgba(228, 216, 202, 0.7);
+                     0 0 10px rgba(210, 140, 100, 0.7);
     }
 }
+
 
 
 
@@ -350,7 +351,7 @@ body {
     margin-top: 30px;
     padding: 20px 60px;
     font-size: 2rem;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(248, 240, 228, 1); /* Light text color matching the theme */
     background: rgba(255, 255, 255, 0.2); /* Transparent frosted glass effect */
     border: 2px solid rgba(248, 240, 228, 0.4); /* Subtle border */
@@ -445,7 +446,7 @@ body {
 .about-heading {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(172, 102, 72, 1); /* Theme color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: left; /* Default for desktop */
@@ -455,7 +456,7 @@ body {
     font-size: 1.3rem;
     line-height: 1.8;
     margin-bottom: 15px;
-    font-family: 'Futura PT Medium', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: rgba(122, 72, 42, 1); /* Slightly darker tone */
 }
 
@@ -556,7 +557,7 @@ body {
 .hours-heading {
     font-size: 3rem;
     margin-bottom: 30px;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(172, 102, 72, 1); /* Theme color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: center;
@@ -586,7 +587,7 @@ body {
 .hours-text {
     font-size: 1.8rem;
     font-weight: bold;
-    font-family: 'Futura PT Medium', sans-serif; /* Complementary font */
+    font-family: 'Playfair Display', serif;
     margin-bottom: 5px;
     color: rgba(122, 72, 42, 1); /* Slightly darker tone */
 }
@@ -594,7 +595,7 @@ body {
 .hours-time {
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(172, 102, 72, 1); /* Theme color */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -699,7 +700,7 @@ body {
 .books-heading {
     font-size: 3rem;
     margin-bottom: 30px;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(172, 102, 72, 1); /* Theme color */
 }
 
@@ -790,7 +791,7 @@ body {
 .location-heading {
     font-size: 3rem;
     margin-bottom: 30px;
-    font-family: 'DG Mataryah', sans-serif; /* Matching font */
+    font-family: 'Playfair Display', serif;
     color: rgba(172, 102, 72, 1); /* Theme color */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
@@ -866,7 +867,7 @@ body {
 
 .footer-contact h3, .footer-social h3 {
     font-size: 1.8rem;
-    font-family: 'DG Mataryah', sans-serif;
+    font-family: 'Playfair Display', serif;
     margin-bottom: 10px;
 }
 
@@ -910,7 +911,7 @@ body {
 /* Credits Section */
 .footer-credits {
     font-size: 1rem;
-    font-family: 'Futura PT Medium', sans-serif;
+    font-family: 'Playfair Display', serif;
     margin-top: 20px;
     color: rgba(122, 72, 42, 0.8); /* Slightly transparent text */
 }
