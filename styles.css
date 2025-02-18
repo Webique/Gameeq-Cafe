@@ -480,60 +480,73 @@ body {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     #about-us {
-        padding: 40px 20px; /* Adjust padding for tablets */
+        padding: 40px 80px; /* Increased side padding for more whitespace */
+    }
+
+    .about-container {
+        max-width: 650px; /* Reduce max-width for more space on the sides */
+        flex-direction: column;
+        gap: 40px; /* More spacing between elements */
     }
 
     .about-heading {
         font-size: 2.8rem;
-        text-align: center; /* Center-align for responsiveness */
+        text-align: center;
+        margin-bottom: 20px; /* Extra space below the heading */
     }
 
     .about-description {
         font-size: 1.1rem;
         text-align: center;
-    }
-
-    .about-container {
-        flex-direction: column; /* Stack columns */
-        gap: 30px; /* Slightly increase gap for spacing */
+        padding: 0 20px; /* Extra side spacing */
     }
 
     .about-text, .about-image {
-        min-width: 100%; /* Ensure full width on smaller devices */
+        min-width: 85%; /* Reduce width to add more whitespace on sides */
+        max-width: 580px; /* Limit text width for readability */
+        margin: 0 auto; /* Center the content */
     }
 
     .about-image img {
-        width: 90%; /* Reduce image width for smaller screens */
-        max-width: 300px; /* Limit maximum size */
-        height: auto; /* Maintain aspect ratio */
+        width: 75%; /* Reduce image width for better spacing */
+        max-width: 260px;
+        height: auto;
     }
 }
 
 @media (max-width: 480px) {
     #about-us {
-        padding: 30px 15px; /* Smaller padding for phones */
+        padding: 30px 50px; /* More side padding for small screens */
+    }
+
+    .about-container {
+        max-width: 450px; /* Keep content constrained for better spacing */
+        gap: 35px;
     }
 
     .about-heading {
         font-size: 2.5rem;
         text-align: center;
+        margin-bottom: 15px;
     }
 
     .about-description {
         font-size: 1rem;
+        padding: 0 25px; /* Add extra padding to prevent touching the edges */
     }
 
-    .about-container {
-        gap: 20px; /* Reduce spacing for smaller screens */
+    .about-text, .about-image {
+        min-width: 80%; /* Reduce width to create more white space on the sides */
+        max-width: 400px;
+        margin: 0 auto; /* Keep text centered */
     }
 
     .about-image img {
-        width: 100%; /* Full width for very small screens */
-        max-width: 250px; /* Limit max size */
+        width: 70%;
+        max-width: 220px;
         height: auto;
     }
 }
