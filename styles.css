@@ -47,25 +47,14 @@ body {
 }
 
 
-/* Logo Wrapper to Stack Elements Vertically */
-.logo-wrapper {
-    display: flex;
-    flex-direction: column; /* Stack logo and banner vertically */
-    align-items: center;    /* Center align */
-}
 
 /* Logo Image */
 .logo {
-    width: 120px; /* Adjust size if needed */
+    width: 170px; /* Adjust size if needed */
     height: auto;
 }
 
-/* Banner Image */
-.banner-image {
-    width: 100px; /* Adjust size for smaller banner */
-    height: auto;
-    margin-top: 5px; /* Space between logo and banner */
-}
+
 
 
 
