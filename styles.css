@@ -160,6 +160,14 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .logo-section {
+        padding-left:0rem; /* ✅ Now it's inside a selector */
+    }
+}
+
+
+
 
 
 /* Hero Section Styles */
